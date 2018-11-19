@@ -22,6 +22,7 @@ view: customers {
     sql: ${TABLE}._fivetran_synced ;;
   }
 
+
   dimension: account_balance {
     type: number
     sql: ${TABLE}.account_balance ;;
@@ -111,6 +112,6 @@ view: customers {
 
   measure: count {
     type: count
-    drill_fields: [email,metadata_state]
+    drill_fields: [email,metadata_state,subscriptions.plan_id]
   }
 }

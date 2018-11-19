@@ -112,6 +112,7 @@ view: subscriptions {
     sql: ${TABLE}.plan_id ;;
   }
 
+
   dimension: quantity {
     type: number
     sql: ${TABLE}.quantity ;;

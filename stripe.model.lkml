@@ -32,4 +32,5 @@ explore: customers {
     sql_on: ${subscription_plan.plan_id} = ${subscriptions.plan_id} ;;
   }
 
+
 }
