@@ -18,9 +18,18 @@ include: "*.view.lkml"                       # include all views in this project
 #   }
 # }
 
-explore: customers {}
+explore: customers {
+  label: "Subscriptions Analytics"
+  description: "This is to analyze subscriptions of our customers"
+  join: subscriptions {
+    type: left_outer
+    relationship: one_to_many
+    sql_on: ${customers.id} = ${subscriptions.customer} ;;
+  }
+  join: subscription_plan {
+    type: left_outer
+    relationship: one_to_one
+    sql_on: ${subscription_plan.plan_id} = ${subscriptions.plan_id} ;;
+  }
 
-explore: subscriptions {}
-
-
-explore: subscription_plan {}
+}

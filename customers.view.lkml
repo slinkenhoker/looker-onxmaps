@@ -80,16 +80,19 @@ view: customers {
   dimension: metadata_address_country {
     type: string
     sql: ${TABLE}.metadata_address_country ;;
+    map_layer_name: countries
   }
 
   dimension: metadata_address_postal_code {
     type: string
     sql: ${TABLE}.metadata_address_postal_code ;;
+    map_layer_name: us_zipcode_tabulation_areas
   }
 
   dimension: metadata_state {
     type: string
     sql: ${TABLE}.metadata_state ;;
+    map_layer_name: us_states
   }
 
   dimension_group: trial_end {
@@ -108,6 +111,6 @@ view: customers {
 
   measure: count {
     type: count
-    drill_fields: [id]
+    drill_fields: [email,metadata_state]
   }
 }
