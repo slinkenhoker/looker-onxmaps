@@ -8,6 +8,7 @@ view: customers {
   }
 
   dimension_group: _fivetran_synced {
+    hidden: yes
     type: time
     timeframes: [
       raw,
@@ -32,6 +33,7 @@ view: customers {
       raw,
       time,
       date,
+      day_of_week,
       week,
       month,
       quarter,
